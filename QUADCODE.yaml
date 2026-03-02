@@ -1,0 +1,189 @@
+# QuadCode Master Project Manifest
+# This file is read by Claude Code at session start
+# Copy and customize for each project repo
+
+quadcode:
+  version: "2.0"
+  repo: apex-ventures-hq
+  type: master-hq
+  
+founder:
+  name: Michael Rodgers
+  github: rodgemd1-lgtm
+  email: rodgemd1@gmail.com
+  day_job: Senior Director, Market & Competitive Intelligence, Oracle Health
+  day_job_reports_to: Matt Cohlmia (VP), Seema Verma (EVP)
+
+organizations:
+  - id: transformfit
+    name: TransformFit Inc.
+    domain: fitness-tech
+    repos:
+      - adapt-evolve-progress   # Primary — active
+      - transform-fit-app       # Legacy
+      - transform-40-fit        # Template
+    ceo: Alex Chen
+    stack: [React, TypeScript, Supabase, CrewAI, Capacitor]
+    
+  - id: quadcode
+    name: QuadCode Systems
+    domain: ai-infrastructure
+    repos:
+      - tigerteam-ai
+      - ios-intelligence-engine
+      - gothic-reckoning
+    ceo: Marcus Webb
+    stack: [Python, FastAPI, CrewAI, LangChain, Railway]
+    
+  - id: intelhub
+    name: IntelHub Analytics
+    domain: competitive-intelligence
+    repos: []   # TBD — add when created
+    ceo: Dr. Sarah Nakamura
+    stack: [Python, Supabase, n8n, Serper]
+    
+  - id: rodgers-media
+    name: Rodgers Media Group
+    domain: content-creator
+    repos:
+      - viral-architect-hub
+      - viral-architect-backend
+    ceo: Jordan Ellis
+    stack: [TypeScript, Python, FastAPI, CrewAI]
+    
+  - id: apex
+    name: Apex Ventures
+    domain: holding-company
+    repos:
+      - apex-ventures-hq        # THIS REPO
+      - nextjs-boilerplate      # Template
+    cfo: David Park
+
+shared_packages:
+  registry: apex-ventures-hq/shared/packages/
+  packages:
+    - name: "@apex/auth"
+      path: shared/packages/auth/
+      status: planned
+    - name: "@apex/ui"
+      path: shared/packages/ui/
+      status: planned
+    - name: "@apex/api-client"
+      path: shared/packages/api-client/
+      status: planned
+    - name: "@apex/database"
+      path: shared/packages/database/
+      status: planned
+    - name: "@apex/ai"
+      path: shared/packages/ai/
+      status: planned
+    - name: "@apex/config"
+      path: shared/packages/config/
+      status: planned
+
+agents:
+  engineering:
+    - id: atlas
+      name: Atlas
+      role: Platform Architect
+      specialty: Systems design, simplification, scalability
+    - id: oracle
+      name: Oracle
+      role: AI Architect
+      specialty: Multi-agent, RAG, guardrails, prompt engineering
+    - id: pixel
+      name: Pixel
+      role: Frontend Lead
+      specialty: React, mobile-first, accessibility, UI/UX
+    - id: vault
+      name: Vault
+      role: Backend Lead
+      specialty: API design, databases, security
+    - id: forge
+      name: Forge
+      role: DevOps Lead
+      specialty: CI/CD, Docker, monitoring
+    - id: sentinel
+      name: Sentinel
+      role: Security Lead
+      specialty: OWASP, threat modeling, zero trust
+  product:
+    - id: lens
+      name: Lens
+      role: UX Lead
+      specialty: User research, wireframes, prototypes
+    - id: compass
+      name: Compass
+      role: Product Manager
+      specialty: PRDs, prioritization, roadmaps
+  growth:
+    - id: signal
+      name: Signal
+      role: Growth Engineer
+      specialty: Acquisition, activation, retention loops
+    - id: spark
+      name: Spark
+      role: Creative Director
+      specialty: Copy, visual content, brand voice
+  intelligence:
+    - id: scout
+      name: Scout
+      role: Market Intelligence
+      specialty: Competitive research, signal detection
+    - id: battle_commander
+      name: Battle Commander
+      role: Competitive Strategist
+      specialty: Win/loss, battlecards, positioning
+    - id: quant
+      name: Quant
+      role: Data Analyst
+      specialty: Pattern analysis, financial modeling, metrics
+
+protocols:
+  directory: docs/protocols/
+  files:
+    - "000-INIT.md"
+    - "010-ARCHITECTURE.md"
+    - "020-DATABASE.md"
+    - "030-AUTH.md"
+    - "040-API.md"
+    - "050-FRONTEND.md"
+    - "060-AI-AGENTS.md"
+    - "070-AUTOMATION.md"
+    - "080-TESTING.md"
+    - "090-DEPLOY.md"
+    - "100-MONITORING.md"
+    - "110-SECURITY.md"
+    - "999-INNOVATION.md"
+
+quality_gates:
+  test_coverage_target: 80
+  lighthouse_target: 90
+  core_web_vitals:
+    lcp_ms: 2500
+    fid_ms: 100
+    cls: 0.1
+  api_performance:
+    read_ms: 200
+    write_ms: 500
+  accessibility: "WCAG 2.1 AA"
+
+api_registry:
+  doc: docs/api-registry.md
+  services:
+    - name: Anthropic
+      env_var: ANTHROPIC_API_KEY
+    - name: OpenAI
+      env_var: OPENAI_API_KEY
+    - name: Supabase
+      env_vars: [SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY]
+    - name: Stripe
+      env_vars: [STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET]
+    - name: Railway
+      env_var: RAILWAY_TOKEN
+    - name: Vercel
+      env_var: VERCEL_TOKEN
+    - name: Serper
+      env_var: SERPER_API_KEY
+    - name: CrewAI
+      env_vars: [CREWAI_API_KEY, CREWAI_BASE_URL]
